@@ -1,0 +1,9 @@
+@import "src/consts/colors";
+@import "src/consts/sizes";
+.wrapper{
+  height:calc(110vh - $heightHeader);
+  background-color: $backgroundColorMain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

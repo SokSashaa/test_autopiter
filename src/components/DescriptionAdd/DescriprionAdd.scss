@@ -1,0 +1,18 @@
+@import "src/consts/colors";
+.descAdd{
+  margin-top: 48px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  img{
+    margin-right: 32px;
+  }
+
+  p{
+    font-size: 14px;
+    height: 46px;
+    width: 315px;
+    color: $textDescription;
+  }
+}
