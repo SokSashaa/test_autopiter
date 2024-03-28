@@ -1,7 +1,7 @@
 @import "src/consts/colors";
 
 .wrapperItemList {
-  height: 53px;
+  min-height: 53px;
   width: 100%;
   padding-top: 7px;
   padding-left: 24px;
@@ -10,9 +10,8 @@
     font-size: 14px;
     font-weight: bold;
     line-height: 19.6px;
-    height: 21px;
+    min-height: 21px;
     width: auto;
-    overflow: hidden;
   }
 
   .descriptionItem {

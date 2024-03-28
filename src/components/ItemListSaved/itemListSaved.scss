@@ -16,10 +16,6 @@
 
   .main_info_saved {
     width: 523px;
-
-    //.test{
-    //  margin-bottom: 36px;
-    //}
   }
 
   &.title_itemList_saved {
@@ -43,26 +39,33 @@
     flex-direction: column;
     align-items: flex-end;
 
-    .show_more{
+
+    .show_more {
       position: absolute;
       bottom: 16px;
       text-decoration: underline;
       text-underline-position: under;
       cursor: pointer;
       color: $textColorDescription;
+
+      span {
+        display: inline-block;
+        background: url("../../images/tick_detail.svg");
+        margin-left: 4px;
+        width: 12px;
+        height: 6px;
+      }
     }
 
-    .show_more::after {
-      content: url("../../images/tick_detail.svg");
-      margin-left: 4px;
-      height: 6px;
+    .show_more_active {
+      span {
+        transform: rotate(180deg);
+      }
     }
 
     .trashIcon {
       height: 18px;
       width: 15px;
-      position: absolute;
-
     }
 
     .detail {
@@ -70,7 +73,6 @@
       align-items: center;
       font-size: 10px;
       line-height: 16px;
-
     }
   }
 }

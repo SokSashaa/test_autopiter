@@ -4,10 +4,11 @@ import './tabs.scss'
 import {statesForm} from "../../utils/enums/formEnums";
 
 type tabsProps = {
+    form: statesForm,
     setForm: React.Dispatch<React.SetStateAction<statesForm>>
 }
 
-const Tabs: FC<tabsProps> = ({setForm}) => {
+const Tabs: FC<tabsProps> = ({setForm, form}) => {
 
     const {savedOrg, setSaved0rg} = useContext(savedOrgContext)
 
@@ -17,10 +18,11 @@ const Tabs: FC<tabsProps> = ({setForm}) => {
 
     return (
         <div className={'choiceForm'}>
-            <button onClick={() => setForm(statesForm.search)} className={'btn-active'}>Новая организация</button>
-            <button onClick={() => setForm(statesForm.saved)}
+            <button className={form===statesForm.search?'btn-active':'btn-no-active'} onClick={() => setForm(statesForm.search)} >Новая организация</button>
+            <button className={form===statesForm.saved?'btn-active':'btn-no-active'} onClick={() => setForm(statesForm.saved)}
                     disabled={savedOrg.length === 0}>
-                Сохраненные организации <span>({savedOrg.length})</span>
+                Сохраненные организации <span
+                className={form === statesForm.saved ? 'choiceForm_saved' : ''}>({savedOrg.length})</span>
             </button>
         </div>
     )

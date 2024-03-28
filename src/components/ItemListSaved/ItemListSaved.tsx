@@ -33,11 +33,8 @@ const ItemListSaved: FC<itemListSavedProps> = ({dataCompany}) => {
             </div>
             <div className={'other_info_saved'}>
                 <img className={'trashIcon'} src={trash} alt={'Удалить'} onClick={delElementInSavedOrgArray}/>
-                <p className={'show_more'}
-                   onClick={() => setDetailSaved(!detailSaved)}>{!detailSaved ? 'подробнее' : 'скрыть подробности'}</p>
-                {/*<div className={'detail'}>*/}
-                {/*    <img className={detailSaved ? 'imgRevers' : ''} src={tick_detail} alt={'Подробнее'}/>*/}
-                {/*</div>*/}
+                <p className={!detailSaved?'show_more':'show_more show_more_active'}
+                   onClick={() => setDetailSaved(!detailSaved)}>{!detailSaved ? 'подробнее' : 'скрыть подробности'}<span/></p>
             </div>
         </div>
 

@@ -16,7 +16,7 @@ const WrapperForm: FC = () => {
         <savedOrgContext.Provider value={{savedOrg: savedOrg, setSaved0rg: setSavedOrg}}>
             <div className={'wrapperForm'}>
                 <p id={'titleWrapperForm'}>Мои организации</p>
-                <Tabs setForm={setForm}/>
+                <Tabs form={form} setForm={setForm}/>
                 {form === statesForm.search ?
                     <Form/> :<FormSaved/>
                 }
