@@ -16,11 +16,16 @@
 
   .main_info_saved {
     width: 523px;
+
+    span{
+      margin-right: 5px;
+    }
   }
 
-  &.title_itemList_saved {
+  .title_itemList_saved {
     font-size: 18px;
     color: $textColor;
+    line-height: 34px
   }
 
   p {
@@ -47,6 +52,8 @@
       text-underline-position: under;
       cursor: pointer;
       color: $textColorDescription;
+      font-size: 10px;
+      line-height: 19px;
 
       span {
         display: inline-block;

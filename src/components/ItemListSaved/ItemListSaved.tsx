@@ -20,14 +20,14 @@ const ItemListSaved: FC<itemListSavedProps> = ({dataCompany}) => {
         <div className={!detailSaved ? 'itemList_saved' : 'itemList_saved active'}>
             <div className={'main_info_saved'}>
                 <h2 className={'title_itemList_saved'}>{dataCompany.name}</h2>
-                <p className={'inn_itemList_saved'}><span>ИНН </span>{dataCompany.inn}</p>
+                <p className={'inn_itemList_saved'}><span>ИНН</span>{dataCompany.inn}</p>
                 {
                     detailSaved &&
                     <>
-                        <p><span>КПП </span>{dataCompany.kpp}</p>
-                        <p><span>ОГРН </span>{dataCompany.ogrn}</p>
-                        <p><span>Юридический адрес </span>{dataCompany.address?.name}</p>
-                        <p><span>{dataCompany.management?.post} </span>{dataCompany.management?.name}</p>
+                        <p><span>КПП</span>{dataCompany.kpp}</p>
+                        <p><span>ОГРН</span>{dataCompany.ogrn}</p>
+                        <p><span>Юридический адрес</span>{dataCompany.address?.name}</p>
+                        <p><span>{dataCompany.management?.post}</span>{dataCompany.management?.name}</p>
                     </>
                 }
             </div>

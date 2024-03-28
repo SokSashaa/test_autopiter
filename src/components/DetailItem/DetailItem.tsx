@@ -23,7 +23,7 @@ const DetailItem: FC<detailItemProps> = ({dataCompany}) => {
     }
     return (
         <div className={'detailItem'}>
-            <p id={'detailItem_title'}>{dataCompany.name}</p>
+            <h2 id={'detailItem_title'}>{dataCompany.name}</h2>
             <div className={'info_item'}>
                 <div className={'other_info'}>
                     <div className={'other_info_address'}>

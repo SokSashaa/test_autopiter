@@ -9,7 +9,7 @@ type itemListProps = {
 const ItemList: FC<itemListProps> = ({dataCompany, setStateDetailItem}) => {
     return (
         <div className={'wrapperItemList'} onClick={() => setStateDetailItem(dataCompany)}>
-            <p className={'titleItem'}>{dataCompany.name}</p>
+            <h2 className={'titleItem'}>{dataCompany.name}</h2>
             <div className={'descriptionItem'}>
                 <p>{dataCompany.inn}</p>
                 <p>{dataCompany.address.region}</p>

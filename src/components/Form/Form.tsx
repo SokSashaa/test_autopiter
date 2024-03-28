@@ -5,7 +5,6 @@ import getData, {getCompanies} from "../../axios/axios";
 import useDebounce from "../../hooks/useDebounce";
 import DetailItem from "../DetailItem/DetailItem";
 import SuggestionsItems from "../SuggestionsItems/SuggestionsItems";
-import {statesForm} from "../../utils/enums/formEnums";
 
 const Form: FC = () => {
 

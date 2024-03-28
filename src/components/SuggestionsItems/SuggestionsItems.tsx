@@ -10,7 +10,7 @@ type suggestionsProps = {
 
 const SuggestionsItems: FC<suggestionsProps> = ({arrayCompany, setStateDetailItem}) => {
     return (
-        <ul>
+        <ul id={'suggestionsList'}>
             {
                 arrayCompany.slice(0, 5).map((item: getCompanies) =>
                     <ItemList key={item.inn}
