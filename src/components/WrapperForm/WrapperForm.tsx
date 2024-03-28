@@ -15,14 +15,14 @@ const WrapperForm: FC = () => {
     return (
         <savedOrgContext.Provider value={{savedOrg: savedOrg, setSaved0rg: setSavedOrg}}>
             <div className={'wrapperForm'}>
-                <p id={'titleWrapperForm'}>Мои организации</p>
+                <h1 id={'titleWrapperForm'}>Мои организации</h1>
                 <Tabs form={form} setForm={setForm}/>
                 {form === statesForm.search ?
                     <Form/> :<FormSaved/>
                 }
-
             </div>
         </savedOrgContext.Provider>
+
 
     )
 }
