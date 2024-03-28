@@ -4,7 +4,7 @@ import './DescriprionAdd.scss'
 const DescriptionAdd:FC = ()=>{
     return(
         <div className={'descAdd'}>
-            <img src={plus}/>
+            <img src={plus} alt={'Добавьте'}/>
             <p>Для добавления новой организации <br/> введите ее название, ИНН или адрес.</p>
         </div>
     )

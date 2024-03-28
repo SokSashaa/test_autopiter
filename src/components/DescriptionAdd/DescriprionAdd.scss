@@ -2,7 +2,6 @@
 .descAdd{
   margin-top: 48px;
   display: flex;
-  flex-direction: row;
   align-items: center;
 
   img{
@@ -11,7 +10,6 @@
 
   p{
     font-size: 14px;
-    height: 46px;
     width: 315px;
     color: $textColorDescription;
     line-height: 19.6px;
