@@ -1,0 +1,36 @@
+@import "src/consts/colors";
+
+.wrapperItemList {
+  height: 53px;
+  width: 100%;
+  padding-top: 7px;
+  padding-left: 24px;
+
+  .titleItem {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 19.6px;
+    height: 21px;
+    width: auto;
+    overflow: hidden;
+  }
+
+  .descriptionItem {
+    display: flex;
+    margin-top: 4px;
+
+    p {
+      height: 21px;
+      margin-right: 11px;
+      font-size: 12px;
+      line-height: 16.8px;
+      color: $textColorDescriptionItemList;
+
+    }
+  }
+}
+
+.wrapperItemList:hover {
+  background-color: $backgroundColorMain;
+  cursor: pointer;
+}

@@ -11,7 +11,10 @@ export type getCompanies = {
         name: string,
         post: string,
     },
-    address: string
+    address: {
+        name: string,
+        region: string,
+    }
 }
 
 const getData = async (query: string) => {
@@ -27,20 +30,26 @@ const getData = async (query: string) => {
             },
 
         }).then((res): getCompanies[] => {
-        const companies = res.data.suggestions.map((item: any): getCompanies => {
+        return res.data.suggestions.map((item: any): getCompanies => {
             return {
                 name: item.value,
                 kpp: item.data.kpp,
                 ogrn: item.data.ogrn,
                 inn: item.data.inn,
-                management: item.data.management,
-                address: item.data.address?.value
+                management: {
+                    name:item.data.management?.name,
+                    post:item.data.management?.post.toLowerCase()
+                },
+                address: {
+                    name: item.data.address?.unrestricted_value,
+                    region: item.data.address?.data.city_with_type ?
+                        item.data.address?.data.city_with_type :
+                        item.data.address?.data.region_with_type
+                }
             }
         })
-        return companies
     })
 }
-
 
 
 export default getData

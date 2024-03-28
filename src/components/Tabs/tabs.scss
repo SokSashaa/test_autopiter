@@ -1,0 +1,40 @@
+@import "src/consts/colors";
+.choiceForm {
+  margin-top: 32px;
+
+  button {
+    height: 37px;
+    margin-right: 8px;
+    background-color: $backgroundColorWhite;
+    border: none;
+    padding: 8px 24px 11px 24px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .btn-active{
+    border-top: 2px solid $borderColorForButton;
+  }
+
+  button:active,
+  button:focus,
+  button:hover {
+    //border-top: 2px solid $borderColorForButton;
+    background-color: $buttonHover;
+    cursor: pointer;
+  }
+
+  button:not(.btn-active):hover {
+    //background: red;
+  }
+
+  button:disabled {
+    background-color: $backgroundColorMain;
+    color: $textColorDisable;
+  }
+
+  span{
+    color:$textColorSpansButton
+  }
+}

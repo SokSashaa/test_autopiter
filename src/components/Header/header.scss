@@ -1,5 +1,6 @@
+@import "src/consts/sizes";
 .header{
-  height: 80px;
+  height: $heightHeader;
   display: flex;
   justify-content: center;
   align-items: center;

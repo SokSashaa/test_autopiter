@@ -3,28 +3,43 @@ import './form.scss'
 import DescriptionAdd from "../DescriptionAdd/DescriptionAdd";
 import getData, {getCompanies} from "../../axios/axios";
 import useDebounce from "../../hooks/useDebounce";
-import ItemList from "../ItemList/ItemList";
+import DetailItem from "../DetailItem/DetailItem";
+import SuggestionsItems from "../SuggestionsItems/SuggestionsItems";
+import {statesForm} from "../../utils/enums/formEnums";
 
 const Form: FC = () => {
+
+    const [stateDetailItem, setStateDetailItem] = useState<getCompanies | undefined>()
+
+
     const [valueInput, setValueInput] = useState<string>('')
     const [arrayCompany, setArrayCompany] = useState<getCompanies[]>([])
     const valueInputDebounce = useDebounce(valueInput, 800)
-    useMemo(async () => await getData(valueInputDebounce).then(value => setArrayCompany(value)), [valueInputDebounce])
+
+    useMemo(async () =>
+            valueInputDebounce !== '' ? await getData(valueInputDebounce)
+                .then(value => setArrayCompany(value)) : null
+        , [valueInputDebounce])
+
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setValueInput(event.target.value);
+        setStateDetailItem(undefined)
+    }
+
     return (
         <div className={'form'}>
             <div className={'title'}>
                 <p id={'titleForm'}>Организация или ИП</p>
                 <input type={'text'}
                        placeholder={'Введите название, ИНН или адрес организации'}
-                       onChange={(event: ChangeEvent<HTMLInputElement>) => setValueInput(event.target.value)}/>
+                       onChange={handleChange}/>
             </div>
 
             {
                 valueInput === '' ? <DescriptionAdd/> :
-                    <ul>
-                        {/*arrayCompany.slice(0,5).map((item:getCompanies)=>*/}
-                        {/*<ItemList key={item.inn} dataCompany={item} nameSavedButton={true}/>)*/}
-                    </ul>
+                    !stateDetailItem ?
+                        <SuggestionsItems arrayCompany={arrayCompany} setStateDetailItem={setStateDetailItem}/>
+                        : <DetailItem dataCompany={stateDetailItem}/>
             }
         </div>
     )

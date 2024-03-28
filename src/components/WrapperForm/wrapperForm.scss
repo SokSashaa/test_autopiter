@@ -3,39 +3,10 @@
 .wrapperForm {
   margin-top: 56px;
 
-  .choiceForm {
-    margin-top: 32px;
-
-    button {
-      height: 37px;
-      margin-right: 8px;
-      background-color: $backgroundColorWhite;
-      border: none;
-      padding: 8px 24px 11px 24px;
-      font-weight: bold;
-      font-size: 12px;
-    }
-    
-    .btn-active{
-      border-top: 2px solid $borderColorForButton;
-    }
-
-    button:active,
-    button:focus,
-    button:hover {
-      //border-top: 2px solid $borderColorForButton;
-      background-color: $buttonHover;
-    }
-
-    button:disabled {
-      background-color: $backgroundColorMain;
-      color: $textColorDisable;
-    }
-  }
-
   #titleWrapperForm {
     font-size: 40px;
     font-weight: bold;
     width: auto;
+    line-height: 48px;
   }
 }

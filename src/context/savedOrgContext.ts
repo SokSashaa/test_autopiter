@@ -7,6 +7,5 @@ type savedOrgContext = {
 }
 export const savedOrgContext = React.createContext<savedOrgContext>({
     savedOrg: [],
-    setSaved0rg: () => {
-    }
+    setSaved0rg: () => {}
 });

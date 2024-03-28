@@ -4,8 +4,8 @@
   width: 736px;
   height: 568px;
   background-color: $backgroundColorWhite;
-  box-sizing: border-box;
   padding: 32px 24px 0 24px;
+  overflow-y: auto;
 
   .title {
     width: 688px;
@@ -24,15 +24,16 @@
       border: 1px solid $borderInput;
       border-radius: 3px;
       margin-top: 3px;
-      box-sizing: border-box;
       padding: 13px 0 12px 16px;
+
     }
 
     input[type='text']::placeholder {
-
+      line-height: 26.4px;
     }
     input[type='text']:not(:placeholder-shown){
       border-color: $borderColorActiveInput;
     }
   }
+
 }

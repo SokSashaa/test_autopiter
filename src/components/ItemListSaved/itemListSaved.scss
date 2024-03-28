@@ -1,0 +1,80 @@
+@import "src/consts/colors";
+
+.itemList_saved {
+  min-height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  border: 1px solid $borderMainColor;
+  border-radius: 3px;
+  margin-bottom: 21px;
+
+  padding: 16px 17px 14px 16px;
+
+  position: relative;
+
+  .main_info_saved {
+    width: 523px;
+
+    //.test{
+    //  margin-bottom: 36px;
+    //}
+  }
+
+  &.title_itemList_saved {
+    font-size: 18px;
+    color: $textColor;
+  }
+
+  p {
+    color: $textColor;
+    font-size: 12px;
+    line-height: 23px;
+
+    span {
+      color: $textColorDescription;
+      text-transform: capitalize;
+    }
+  }
+
+  .other_info_saved {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .show_more{
+      position: absolute;
+      bottom: 16px;
+      text-decoration: underline;
+      text-underline-position: under;
+      cursor: pointer;
+      color: $textColorDescription;
+    }
+
+    .show_more::after {
+      content: url("../../images/tick_detail.svg");
+      margin-left: 4px;
+      height: 6px;
+    }
+
+    .trashIcon {
+      height: 18px;
+      width: 15px;
+      position: absolute;
+
+    }
+
+    .detail {
+      display: flex;
+      align-items: center;
+      font-size: 10px;
+      line-height: 16px;
+
+    }
+  }
+}
+
+.active {
+  min-height: 200px;
+}
