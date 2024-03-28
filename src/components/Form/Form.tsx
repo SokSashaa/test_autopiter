@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FC, useMemo, useState} from "react";
+import React, {ChangeEvent, FC, useEffect, useState} from "react";
 import './form.scss'
 import DescriptionAdd from "../DescriptionAdd/DescriptionAdd";
 import getData, {getCompanies} from "../../axios/axios";
@@ -15,10 +15,9 @@ const Form: FC = () => {
     const [arrayCompany, setArrayCompany] = useState<getCompanies[]>([])
     const valueInputDebounce = useDebounce(valueInput, 800)
 
-    useMemo(async () =>
-            valueInputDebounce !== '' ? await getData(valueInputDebounce)
-                .then(value => setArrayCompany(value)) : null
-        , [valueInputDebounce])
+    useEffect(() => {
+        if (valueInputDebounce !== '') getData(valueInputDebounce).then(value => setArrayCompany(value))
+    }, [valueInputDebounce]);
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         setValueInput(event.target.value);
