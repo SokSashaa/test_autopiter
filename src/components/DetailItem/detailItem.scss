@@ -8,7 +8,7 @@
 
   .info_item {
     display: flex;
-    gap: 93px;
+    gap: 63px;
 
     .other_info {
       display: flex;
@@ -27,9 +27,13 @@
     .main_info {
       background-color: $backgroundColorMain;
       padding: 24px;
-      width: 208px;
+      width: fit-content;
       line-height: 26px;
       margin: auto 0 ;
+
+      p{
+        white-space: nowrap;
+      }
       span {
         font-weight: bold;
       }

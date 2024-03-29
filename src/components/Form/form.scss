@@ -1,6 +1,7 @@
 @import "src/consts/colors";
 
 .form {
+  //width: clamp(300px,100%,736px);
   width: 736px;
   height: 568px;
   background-color: $backgroundColorWhite;

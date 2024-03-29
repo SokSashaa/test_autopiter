@@ -18,8 +18,8 @@ const DetailItem: FC<detailItemProps> = ({dataCompany}) => {
         setSavedItem(true)
     }
 
-    const checkElementInSavedOrgArray = (dataCompany:getCompanies)=>{
-        return savedOrg.findIndex(item => item.inn===dataCompany.inn)===-1
+    const checkElementInSavedOrgArray = (dataCompany: getCompanies) => {
+        return savedOrg.findIndex(item => item.inn === dataCompany.inn) === -1
     }
     return (
         <div className={'detailItem'}>
@@ -39,7 +39,9 @@ const DetailItem: FC<detailItemProps> = ({dataCompany}) => {
                 </div>
                 <div className={'main_info'}>
                     <p><span>ИНН</span> {dataCompany.inn}</p>
-                    <p><span>КПП</span> {dataCompany.kpp}</p>
+                    {
+                        dataCompany.kpp && <p><span>КПП</span> {dataCompany.kpp}</p>
+                    }
                     <p><span>ОГРН</span> {dataCompany.ogrn}</p>
                 </div>
             </div>

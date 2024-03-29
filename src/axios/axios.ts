@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_KEY = '7ca4ad959df6662dd6e82b0d65bb262435dfb21c';
+const API_KEY = '152956bd52d4ea856aa077e7fd05655b6b41a316';
 
 export type getCompanies = {
     name: string,
@@ -37,13 +37,12 @@ const getData = async (query: string) => {
                 ogrn: item.data.ogrn,
                 inn: item.data.inn,
                 management: {
-                    name:item.data.management?.name,
-                    post:item.data.management?.post.toLowerCase()
+                    name: item.data.management?.name,
+                    post: item.data.management?.post.toLowerCase()
                 },
                 address: {
                     name: item.data.address?.unrestricted_value,
-                    region: item.data.address?.data.city_with_type ?
-                        item.data.address?.data.city_with_type :
+                    region: item.data.address?.data.city_with_type ??
                         item.data.address?.data.region_with_type
                 }
             }
