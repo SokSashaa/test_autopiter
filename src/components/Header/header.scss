@@ -1,10 +1,11 @@
 @import "src/consts/sizes";
-.header{
+
+.header {
   height: $heightHeader;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  img{
+  display: grid;
+  place-items: center;
+
+  img {
     height: 48px;
   }
 }
