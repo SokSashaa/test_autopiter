@@ -1,4 +1,4 @@
-import {FC, useContext, useState} from "react";
+import {FC, useContext} from "react";
 import './detailItem.scss'
 import {getCompanies} from "../../axios/axios";
 import {savedOrgContext} from "../../context/savedOrgContext";
@@ -10,12 +10,12 @@ type detailItemProps = {
 
 const DetailItem: FC<detailItemProps> = ({dataCompany}) => {
 
-    const [savedItem, setSavedItem] = useState<boolean>(false)
+   // const [savedItem, setSavedItem] = useState<boolean>(false)
     const {savedOrg, setSaved0rg} = useContext(savedOrgContext)
 
     const addElementInSavedOrgArray = () => {
         setSaved0rg([...savedOrg, dataCompany])
-        setSavedItem(true)
+        //setSavedItem(true)
     }
 
     const checkElementInSavedOrgArray = (dataCompany: getCompanies) => {
