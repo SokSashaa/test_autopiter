@@ -10,7 +10,7 @@ type tabsProps = {
 
 const Tabs: FC<tabsProps> = ({setForm, form}) => {
 
-    const {savedOrg, setSaved0rg} = useContext(savedOrgContext)
+    const {savedOrg, setSavedOrg} = useContext(savedOrgContext)
 
     useEffect(() => {
         if (savedOrg.length === 0) setForm(statesForm.search)

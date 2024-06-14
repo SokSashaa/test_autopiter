@@ -10,10 +10,10 @@ type itemListSavedProps = {
 }
 const ItemListSaved: FC<itemListSavedProps> = ({dataCompany}) => {
     const [detailSaved, setDetailSaved] = useState<boolean>(false)
-    const {savedOrg, setSaved0rg} = useContext(savedOrgContext)
+    const {savedOrg, setSavedOrg} = useContext(savedOrgContext)
     const delElementInSavedOrgArray = () => {
         savedOrg.splice(savedOrg.findIndex(item => item.inn === dataCompany.inn), 1)
-        setSaved0rg([...savedOrg])
+        setSavedOrg([...savedOrg])
     }
 
     return (

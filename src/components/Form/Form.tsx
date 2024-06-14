@@ -8,7 +8,7 @@ import SuggestionsItems from "../SuggestionsItems/SuggestionsItems";
 
 const Form: FC = () => {
 
-    const [stateDetailItem, setStateDetailItem] = useState<getCompanies | undefined>()
+    const [stateDetailItem, setStateDetailItem] = useState<getCompanies>()
 
 
     const [valueInput, setValueInput] = useState<string>('')
@@ -23,7 +23,6 @@ const Form: FC = () => {
         setValueInput(event.target.value);
         setStateDetailItem(undefined)
     }
-
     return (
         <div className={'form'}>
             <div className={'title'}>

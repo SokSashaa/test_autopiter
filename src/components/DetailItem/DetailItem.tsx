@@ -11,10 +11,10 @@ type detailItemProps = {
 const DetailItem: FC<detailItemProps> = ({dataCompany}) => {
 
    // const [savedItem, setSavedItem] = useState<boolean>(false)
-    const {savedOrg, setSaved0rg} = useContext(savedOrgContext)
+    const {savedOrg, setSavedOrg} = useContext(savedOrgContext)
 
     const addElementInSavedOrgArray = () => {
-        setSaved0rg([...savedOrg, dataCompany])
+        setSavedOrg([...savedOrg, dataCompany])
         //setSavedItem(true)
     }
 

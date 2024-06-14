@@ -1,4 +1,4 @@
-import {FC, useState} from "react";
+import {FC, useMemo, useState} from "react";
 import './wrapperForm.scss'
 import Form from "../Form/Form";
 import {getCompanies} from "../../axios/axios";
@@ -12,13 +12,17 @@ const WrapperForm: FC = () => {
     const [savedOrg, setSavedOrg] = useState<getCompanies[]>([]);
     const [form, setForm] = useState<statesForm>(statesForm.search);
 
+    const q = useMemo(() => {
+        return {savedOrg,setSavedOrg}
+    }, [savedOrg,setSavedOrg]);
+
     return (
-        <savedOrgContext.Provider value={{savedOrg: savedOrg, setSaved0rg: setSavedOrg}}>
+        <savedOrgContext.Provider value={q}>
             <div className={'wrapperForm'}>
                 <h1 id={'titleWrapperForm'}>Мои организации</h1>
                 <Tabs form={form} setForm={setForm}/>
                 {form === statesForm.search ?
-                    <Form/> :<FormSaved/>
+                    <Form/> : <FormSaved/>
                 }
             </div>
         </savedOrgContext.Provider>
